@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 public class TicTacToeBoardTest {
 
@@ -12,7 +12,7 @@ public class TicTacToeBoardTest {
     public void testMove() {
         TicTacToeBoard board = new TicTacToeBoard();
         board.move(Player.X, 0, 0);
-        assertTrue(board.getBoard()[0][0] == Player.X);
+        assertEquals(board.getBoard()[0][0], Player.X);
     }
 
     @Ignore
@@ -35,7 +35,7 @@ public class TicTacToeBoardTest {
         TicTacToeBoard board = new TicTacToeBoard();
         setupBoardForOColumnWin(board);
         board.move(Player.O, 1, 2);
-        assertTrue(board.getWinner() == Player.O);
+        assertEquals(board.getWinner(), Player.O);
     }
 
     private void setupBoardForOColumnWin(TicTacToeBoard board) {
@@ -46,13 +46,12 @@ public class TicTacToeBoardTest {
         board.move(Player.X, 2, 0);
     }
 
-
     @Test
     public void testAIWinsWithNextColumnMoveIfAvailable() {
         TicTacToeBoard board = new TicTacToeBoard();
         setupBoardForOColumnWin(board);
         board.nextMoveAI();
-        assertTrue(board.getWinner() == Player.O);
+        assertEquals(board.getWinner(), Player.O);
     }
 
     @Test
@@ -63,7 +62,7 @@ public class TicTacToeBoardTest {
         board.move(Player.X, 1, 2);
         board.move(Player.O, 1, 1);
         board.move(Player.X, 2, 2);
-        assertTrue(board.getWinner() == Player.X);
+        assertEquals(board.getWinner(), Player.X);
     }
 
     @Test
@@ -75,7 +74,7 @@ public class TicTacToeBoardTest {
         board.move(Player.O, 1, 1);
         board.move(Player.X, 0, 2);
         board.nextMoveAI();
-        assertTrue(board.getWinner() == Player.O);
+        assertEquals(board.getWinner(), Player.O);
     }
 
     @Test
@@ -83,7 +82,7 @@ public class TicTacToeBoardTest {
         TicTacToeBoard board = new TicTacToeBoard();
         setupBoardForODiagonalWin(board);
         board.move(Player.O, 2, 2);
-        assertTrue(board.getWinner() == Player.O);
+        assertEquals(board.getWinner(), Player.O);
     }
 
     @Test
@@ -91,9 +90,8 @@ public class TicTacToeBoardTest {
         TicTacToeBoard board = new TicTacToeBoard();
         setupBoardForODiagonalWin(board);
         board.nextMoveAI();
-        assertTrue(board.getWinner() == Player.O);
+        assertEquals(board.getWinner(), Player.O);
     }
-
 
     private void setupBoardForODiagonalWin(TicTacToeBoard board) {
         board.move(Player.X, 0, 2);
@@ -132,6 +130,5 @@ public class TicTacToeBoardTest {
         board.nextMoveAI();
         Assert.assertEquals(board.getBoard()[0][0], Player.O);
     }
-
 
 }
