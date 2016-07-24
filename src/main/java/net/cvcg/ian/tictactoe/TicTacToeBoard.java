@@ -32,22 +32,22 @@ public class TicTacToeBoard {
 
     public void nextMoveAI() {
         if (checkForWinningRow(0, Player.O) != -1) {
-            move(Player.O, 1, checkForWinningRow(0, Player.O));
+            move(Player.O, checkForWinningRow(0, Player.O), 0);
         }
         else if (checkForWinningRow(1, Player.O) != -1) {
-            move(Player.O, 1, checkForWinningRow(1, Player.O));
+            move(Player.O, checkForWinningRow(1, Player.O), 1);
         }
         else if (checkForWinningRow(2, Player.O) != -1) {
-            move(Player.O, 1, checkForWinningRow(2, Player.O));
+            move(Player.O, checkForWinningRow(2, Player.O), 2);
         }
         else if (checkForWinningColumn(0, Player.O) != -1) {
-            move(Player.O, 1, checkForWinningColumn(0, Player.O));
+            move(Player.O, 0, checkForWinningColumn(0, Player.O));
         }
         else if (checkForWinningColumn(1, Player.O) != -1) {
             move(Player.O, 1, checkForWinningColumn(1, Player.O));
         }
         else if (checkForWinningColumn(2, Player.O) != -1) {
-            move(Player.O, 1, checkForWinningColumn(2, Player.O));
+            move(Player.O, 2, checkForWinningColumn(2, Player.O));
         }
         else if (board[0][0] == board [1][1] && board[2][2] == null && board[0][0] == Player.O){
             move(Player.O, 2, 2);
@@ -68,22 +68,22 @@ public class TicTacToeBoard {
             move(Player.O, 1, 1);
         }
         else if (checkForWinningRow(0, Player.X) != -1) {
-            move(Player.O, 1, checkForWinningRow(0, Player.O));
+            move(Player.O, checkForWinningRow(0, Player.X), 0);
         }
         else if (checkForWinningRow(1, Player.X) != -1) {
-            move(Player.O, 1, checkForWinningRow(1, Player.O));
+            move(Player.O, checkForWinningRow(1, Player.X), 1);
         }
         else if (checkForWinningRow(2, Player.X) != -1) {
-            move(Player.O, 1, checkForWinningRow(2, Player.O));
+            move(Player.O, checkForWinningRow(2, Player.X), 2);
         }
         else if (checkForWinningColumn(0, Player.X) != -1) {
-            move(Player.O, 1, checkForWinningColumn(0, Player.O));
+            move(Player.O, 0, checkForWinningColumn(0, Player.X));
         }
         else if (checkForWinningColumn(1, Player.X) != -1) {
-            move(Player.O, 1, checkForWinningColumn(1, Player.O));
+            move(Player.O, 1, checkForWinningColumn(1, Player.X));
         }
         else if (checkForWinningColumn(2, Player.X) != -1) {
-            move(Player.O, 1, checkForWinningColumn(2, Player.O));
+            move(Player.O, 2, checkForWinningColumn(2, Player.X));
         }
         else if (board[0][0] == board [1][1] && board[2][2] == null && board[0][0] == Player.X){
             move(Player.O, 2, 2);
