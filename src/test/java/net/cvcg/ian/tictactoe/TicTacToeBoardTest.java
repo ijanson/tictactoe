@@ -108,7 +108,7 @@ public class TicTacToeBoardTest {
         board.move(Player.O, 0, 1);
         board.move(Player.X, 1, 2);
         board.nextMoveAI();
-        Assert.assertEquals(board.getBoard()[2][2], Player.O);
+        assertEquals(board.getBoard()[2][2], Player.O);
     }
 
     @Test
@@ -118,7 +118,7 @@ public class TicTacToeBoardTest {
         board.move(Player.O, 0, 1);
         board.move(Player.X, 2, 1);
         board.nextMoveAI();
-        Assert.assertEquals(board.getBoard()[2][0], Player.O);
+        assertEquals(board.getBoard()[2][0], Player.O);
     }
 
     @Test
@@ -128,7 +128,7 @@ public class TicTacToeBoardTest {
         board.move(Player.O, 0, 1);
         board.move(Player.X, 1, 1);
         board.nextMoveAI();
-        Assert.assertEquals(board.getBoard()[0][0], Player.O);
+        assertEquals(board.getBoard()[0][0], Player.O);
     }
 
 }
