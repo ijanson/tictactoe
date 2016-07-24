@@ -131,4 +131,18 @@ public class TicTacToeBoardTest {
         assertEquals(board.getBoard()[0][0], Player.O);
     }
 
+    @Test
+    public void testAIPrioritizesWinOverBlock() {
+        TicTacToeBoard board = new TicTacToeBoard();
+        board.move(Player.X, 0, 2);
+        board.move(Player.O, 0, 1);
+        board.move(Player.X, 1, 2);
+        board.move(Player.O, 1, 1);
+        board.move(Player.X, 1, 0);
+        board.nextMoveAI();
+        assertEquals(board.getBoard()[2][1], Player.O);
+        assertEquals(board.getWinner(), Player.O);
+
+    }
+
 }
