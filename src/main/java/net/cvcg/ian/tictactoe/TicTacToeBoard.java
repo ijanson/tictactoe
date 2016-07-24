@@ -104,11 +104,9 @@ public class TicTacToeBoard {
             move(Player.O, 1, 1);
         }
         else {
-            int i = 0;
-            int j = 0;
             while (true) {
-                i = generateRandomSpace();
-                j = generateRandomSpace();
+                int i = generateRandomSpace();
+                int j = generateRandomSpace();
                 if (board[i][j] != null) {
                     move(Player.O, i, j);
                     break;
