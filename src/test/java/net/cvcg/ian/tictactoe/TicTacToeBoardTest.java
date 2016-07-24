@@ -32,12 +32,25 @@ public class TicTacToeBoardTest {
     @Test
     public void testGetWinnerInColumn() {
         TicTacToeBoard board = new TicTacToeBoard();
+        setupBoardForOColumnWin(board);
+        board.move(Player.O, 1, 2);
+        assertTrue(board.getWinner() == Player.O);
+    }
+
+    private void setupBoardForOColumnWin(TicTacToeBoard board) {
         board.move(Player.X, 0, 0);
         board.move(Player.O, 1, 0);
         board.move(Player.X, 0, 2);
         board.move(Player.O, 1, 1);
         board.move(Player.X, 2, 0);
-        board.move(Player.O, 1, 2);
+    }
+
+
+    @Test
+    public void testAIWinsWithNextColumnMoveIfAvailable() {
+        TicTacToeBoard board = new TicTacToeBoard();
+        setupBoardForOColumnWin(board);
+        board.nextMoveAI();
         assertTrue(board.getWinner() == Player.O);
     }
 
