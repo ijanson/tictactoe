@@ -1,5 +1,6 @@
 package net.cvcg.ian.tictactoe;
 
+import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
@@ -100,6 +101,36 @@ public class TicTacToeBoardTest {
         board.move(Player.X, 1, 2);
         board.move(Player.O, 1, 1);
         board.move(Player.X, 2, 1);
+    }
+
+    @Test
+    public void testAIBlocksPotentialRowWin() {
+        TicTacToeBoard board = new TicTacToeBoard();
+        board.move(Player.X, 0, 2);
+        board.move(Player.O, 0, 1);
+        board.move(Player.X, 1, 2);
+        board.nextMoveAI();
+        Assert.assertEquals(board.getBoard()[2][2], Player.O);
+    }
+
+    @Test
+    public void testAIBlocksPotentialColumnWin() {
+        TicTacToeBoard board = new TicTacToeBoard();
+        board.move(Player.X, 2, 2);
+        board.move(Player.O, 0, 1);
+        board.move(Player.X, 2, 1);
+        board.nextMoveAI();
+        Assert.assertEquals(board.getBoard()[2][0], Player.O);
+    }
+
+    @Test
+    public void testAIBlocksPotentialDiagonalWin() {
+        TicTacToeBoard board = new TicTacToeBoard();
+        board.move(Player.X, 2, 2);
+        board.move(Player.O, 0, 1);
+        board.move(Player.X, 1, 1);
+        board.nextMoveAI();
+        Assert.assertEquals(board.getBoard()[0][0], Player.O);
     }
 
 
