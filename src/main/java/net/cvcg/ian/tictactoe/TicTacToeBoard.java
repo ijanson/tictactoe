@@ -33,51 +33,39 @@ public class TicTacToeBoard {
     public void nextMoveAI() {
         if (checkForWinningRow(0) != -1) {
             move(Player.O, 1, checkForWinningRow(0));
-            return;
         }
         else if (checkForWinningRow(1) != -1) {
             move(Player.O, 1, checkForWinningRow(1));
-            return;
         }
         else if (checkForWinningRow(2) != -1) {
             move(Player.O, 1, checkForWinningRow(2));
-            return;
         }
         else if (checkForWinningColumn(0) != -1) {
             move(Player.O, 1, checkForWinningColumn(0));
-            return;
         }
         else if (checkForWinningColumn(1) != -1) {
             move(Player.O, 1, checkForWinningColumn(1));
-            return;
         }
         else if (checkForWinningColumn(2) != -1) {
             move(Player.O, 1, checkForWinningColumn(2));
-            return;
         }
         else if (board[0][0] == board [1][1] && board[2][2] == null){
             move(Player.O, 2, 2);
-            return;
         }
         else if (board[1][1] == board [2][2] && board[0][0] == null){
             move(Player.O, 0, 0);
-            return;
         }
         else if (board[0][0] == board [2][2] && board[1][1] == null){
             move(Player.O, 1, 1);
-            return;
         }
         else if (board[0][2] == board [1][1] && board[2][0] == null){
             move(Player.O, 2, 0);
-            return;
         }
         else if (board[1][1] == board [2][0] && board[0][2] == null){
             move(Player.O, 0, 2);
-            return;
         }
         else if (board[0][2] == board [2][0] && board[1][1] == null){
             move(Player.O, 1, 1);
-            return;
         }
         else {
             int i = 0;
