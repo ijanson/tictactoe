@@ -66,6 +66,18 @@ public class TicTacToeBoardTest {
     }
 
     @Test
+    public void testAIWinsWithNextRowMoveIfAvailable() {
+        TicTacToeBoard board = new TicTacToeBoard();
+        board.move(Player.X, 0, 0);
+        board.move(Player.O, 0, 1);
+        board.move(Player.X, 2, 0);
+        board.move(Player.O, 1, 1);
+        board.move(Player.X, 0, 2);
+        board.nextMoveAI();
+        assertTrue(board.getWinner() == Player.O);
+    }
+
+    @Test
     public void testGetWinnerInDiagonal() {
         TicTacToeBoard board = new TicTacToeBoard();
         setupBoardForODiagonalWin(board);
