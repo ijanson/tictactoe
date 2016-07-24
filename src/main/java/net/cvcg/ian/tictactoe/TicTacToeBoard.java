@@ -124,20 +124,6 @@ public class TicTacToeBoard {
         else {return  -1;}
     }
 
-    private int[] checkForWinningDiagonal1() {
-        if (board[0][0] == board[1][1] && board[2][2] == null) {
-            return new int[] {2, 2};
-        }
-        if (board[1][1] == board[2][2] && board[0][0] == null) {
-            return new int[] {0, 0};
-        }
-        if (board[0][0] == board[2][2] && board[1][1] == null) {
-            return new int[] {1, 1};
-        } else {
-            return new int[]{-1, -1};
-        }
-    }
-
     private Player checkRow(int row) {
         if (board[0][row] != null && board[0][row] == board [1][row] && board[1][row] == board [2][row]) {
             return board[0][row];
