@@ -68,13 +68,26 @@ public class TicTacToeBoardTest {
     @Test
     public void testGetWinnerInDiagonal() {
         TicTacToeBoard board = new TicTacToeBoard();
+        setupBoardForODiagonalWin(board);
+        board.move(Player.O, 2, 2);
+        assertTrue(board.getWinner() == Player.O);
+    }
+
+    @Test
+    public void testAIWinsWithNextDiagonalMoveIfAvailable() {
+        TicTacToeBoard board = new TicTacToeBoard();
+        setupBoardForODiagonalWin(board);
+        board.nextMoveAI();
+        assertTrue(board.getWinner() == Player.O);
+    }
+
+
+    private void setupBoardForODiagonalWin(TicTacToeBoard board) {
         board.move(Player.X, 0, 2);
         board.move(Player.O, 0, 0);
         board.move(Player.X, 1, 2);
         board.move(Player.O, 1, 1);
         board.move(Player.X, 2, 1);
-        board.move(Player.O, 2, 2);
-        assertTrue(board.getWinner() == Player.O);
     }
 
 
