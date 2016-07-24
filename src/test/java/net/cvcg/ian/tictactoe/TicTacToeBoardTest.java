@@ -18,7 +18,7 @@ public class TicTacToeBoardTest {
     @Test(expected=IllegalArgumentException.class)
     public void testCannotMoveOverOtherPlayer() {
         TicTacToeBoard board = new TicTacToeBoard();
-        board.move(Player.Y, 0, 0);
+        board.move(Player.O, 0, 0);
         board.move(Player.X, 0, 0);
     }
 
@@ -26,28 +26,28 @@ public class TicTacToeBoardTest {
     @Test(expected=IllegalArgumentException.class)
     public void testOMovesCannotExceedXMoves() {
         TicTacToeBoard board = new TicTacToeBoard();
-        board.move(Player.Y, 0, 0);
+        board.move(Player.O, 0, 0);
     }
 
     @Test
     public void testGetWinnerInColumn() {
         TicTacToeBoard board = new TicTacToeBoard();
         board.move(Player.X, 0, 0);
-        board.move(Player.Y, 1, 0);
+        board.move(Player.O, 1, 0);
         board.move(Player.X, 0, 2);
-        board.move(Player.Y, 1, 1);
+        board.move(Player.O, 1, 1);
         board.move(Player.X, 2, 0);
-        board.move(Player.Y, 1, 2);
-        assertTrue(board.getWinner() == Player.Y);
+        board.move(Player.O, 1, 2);
+        assertTrue(board.getWinner() == Player.O);
     }
 
     @Test
     public void testGetWinnerInRow() {
         TicTacToeBoard board = new TicTacToeBoard();
         board.move(Player.X, 0, 2);
-        board.move(Player.Y, 0, 1);
+        board.move(Player.O, 0, 1);
         board.move(Player.X, 1, 2);
-        board.move(Player.Y, 0, 1);
+        board.move(Player.O, 0, 1);
         board.move(Player.X, 2, 2);
         assertTrue(board.getWinner() == Player.X);
     }
@@ -56,12 +56,12 @@ public class TicTacToeBoardTest {
     public void testGetWinnerInDiagonal() {
         TicTacToeBoard board = new TicTacToeBoard();
         board.move(Player.X, 0, 2);
-        board.move(Player.Y, 0, 0);
+        board.move(Player.O, 0, 0);
         board.move(Player.X, 1, 2);
-        board.move(Player.Y, 1, 1);
+        board.move(Player.O, 1, 1);
         board.move(Player.X, 2, 1);
-        board.move(Player.Y, 2, 2);
-        assertTrue(board.getWinner() == Player.Y);
+        board.move(Player.O, 2, 2);
+        assertTrue(board.getWinner() == Player.O);
     }
 
 
