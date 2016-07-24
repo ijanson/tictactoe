@@ -20,6 +20,8 @@ public class TicTacToeBoard {
         if (player ==  null) {player = checkColumn(0);}
         if (player ==  null) {player = checkColumn(1);}
         if (player ==  null) {player = checkColumn(2);}
+        if (player == null) {if (board[0][0] != null && board[0][0] == board [1][1] && board[1][1] == board [2][2]) {player = board[0][0];}}
+        if (player == null) {if (board[0][2] != null && board[0][2] == board [1][1] && board[1][1] == board [2][0]) {player = board[0][2];}}
         return player;
     }
     public Player[][] getBoard() {
