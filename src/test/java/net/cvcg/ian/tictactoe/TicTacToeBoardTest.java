@@ -31,4 +31,13 @@ public class TicTacToeBoardTest {
         assertTrue(board.getWinner() == Player.X);
     }
 
+    @Test
+    public void testGetWinnerInDiagonal() {
+        TicTacToeBoard board = new TicTacToeBoard();
+        board.move(Player.Y, 0, 0);
+        board.move(Player.Y, 1, 1);
+        board.move(Player.Y, 2, 2);
+        assertTrue(board.getWinner() == Player.Y);
+    }
+
 }
