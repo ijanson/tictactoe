@@ -60,7 +60,7 @@ public class TicTacToeBoardTest {
         board.move(Player.X, 0, 2);
         board.move(Player.O, 0, 1);
         board.move(Player.X, 1, 2);
-        board.move(Player.O, 0, 1);
+        board.move(Player.O, 1, 1);
         board.move(Player.X, 2, 2);
         assertTrue(board.getWinner() == Player.X);
     }
