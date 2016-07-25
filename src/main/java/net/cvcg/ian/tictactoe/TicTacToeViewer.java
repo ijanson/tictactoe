@@ -74,9 +74,11 @@ public class TicTacToeViewer
     }
 
     public void refresh() {
-        SwingUtilities.updateComponentTreeUI(frame);
+
         TicTacToeComponent component1 = new TicTacToeComponent();
+        component1.repaint();
         component1.setBoard(board);
         frame.add(component1);
+        frame.repaint();
     }
 }
