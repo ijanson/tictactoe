@@ -177,7 +177,7 @@ public class TicTacToeBoard {
 
     private int generateRandomSpace() {
         Random rand = new Random();
-        return rand.nextInt(2);
+        return rand.nextInt(3);
     }
 
     private int checkForWinningColumn(int column, Player player) {
