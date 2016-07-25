@@ -17,39 +17,39 @@ public class TicTacToeViewer
         public void mousePressed(MouseEvent event) {
             int x = event.getX();
             int y = event.getY();
-            if (x >= 0 && x <= 165 && y >= 0 && y <= 185 && boardArray[0][0] == null) {
+            if (x >= 0 && x <= 165 && y >= 0 && y <= 185 && boardArray[0][0] == null && TicTacToe.turn) {
                 board.move(Player.X, 0, 0);
                 TicTacToe.turn = false;
             }
-            else if (x >= 170 && x <= 325 && y >= 0 && y <= 185 && boardArray[1][0] == null) {
+            else if (x >= 170 && x <= 325 && y >= 0 && y <= 185 && boardArray[1][0] == null && TicTacToe.turn) {
                 board.move(Player.X, 1, 0);
                 TicTacToe.turn = false;
             }
-            else if (x >= 325 && x <= 495 && y >= 0 && y <= 185 && boardArray[2][0] == null) {
+            else if (x >= 325 && x <= 495 && y >= 0 && y <= 185 && boardArray[2][0] == null && TicTacToe.turn) {
                 board.move(Player.X, 2, 0);
                 TicTacToe.turn = false;
             }
-            else if (x >= 0 && x <= 165 && y >= 190 && y <= 345 && boardArray[0][1] == null) {
+            else if (x >= 0 && x <= 165 && y >= 190 && y <= 345 && boardArray[0][1] == null && TicTacToe.turn) {
                 board.move(Player.X, 0, 1);
                 TicTacToe.turn = false;
             }
-            else if (x >= 170 && x <= 325 && y >= 190 && y <= 345 && boardArray[1][1] == null) {
+            else if (x >= 170 && x <= 325 && y >= 190 && y <= 345 && boardArray[1][1] == null && TicTacToe.turn) {
                 board.move(Player.X, 1, 1);
                 TicTacToe.turn = false;
             }
-            else if (x >= 330 && x <= 495 && y >= 190 && y <= 345 && boardArray[2][1] == null) {
+            else if (x >= 330 && x <= 495 && y >= 190 && y <= 345 && boardArray[2][1] == null && TicTacToe.turn) {
                 board.move(Player.X, 2, 1);
                 TicTacToe.turn = false;
             }
-            else if (x >= 0 && x <= 165 && y >= 350 && y <= 505 && boardArray[0][2] == null) {
+            else if (x >= 0 && x <= 165 && y >= 350 && y <= 505 && boardArray[0][2] == null && TicTacToe.turn) {
                 board.move(Player.X, 0, 2);
                 TicTacToe.turn = false;
             }
-            else if (x >= 170 && x <= 325 && y >= 350 && y <= 505 && boardArray[1][2] == null) {
+            else if (x >= 170 && x <= 325 && y >= 350 && y <= 505 && boardArray[1][2] == null && TicTacToe.turn) {
                 board.move(Player.X, 1, 2);
                 TicTacToe.turn = false;
             }
-            else if (x >= 330 && x <= 495 && y >= 350 && y <= 505 && boardArray[2][2] == null) {
+            else if (x >= 330 && x <= 495 && y >= 350 && y <= 505 && boardArray[2][2] == null && TicTacToe.turn) {
                 board.move(Player.X, 2, 2);
                 TicTacToe.turn = false;
             }
