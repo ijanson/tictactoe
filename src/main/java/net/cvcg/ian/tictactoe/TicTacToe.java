@@ -1,27 +1,61 @@
 package net.cvcg.ian.tictactoe;
+import javax.swing.*;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 /*
  * @author ian, @date 7/23/16 4:56 PM
  */
 public class TicTacToe {
-    public boolean someLibraryMethod() {
-        return true;
-    }
+    public static boolean turn = true;
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) throws InterruptedException {
         Scanner kBoard = new Scanner(System.in);
         TicTacToeBoard board = new TicTacToeBoard();
         TicTacToeViewer viewer = new TicTacToeViewer(board);
         viewer.refresh();
         while (true) {
-            int move = kBoard.nextInt();
-            System.out.println();
-            int move2 = kBoard.nextInt();
-            System.out.println();
-            board.move(Player.O, move, move2);
-            viewer.refresh();
+
+            if (board.getWinner() == Player.X) {
+                int reply = JOptionPane.showConfirmDialog(null, "You Won! Play Again?", "Play Again?", JOptionPane.YES_NO_OPTION);
+                if (reply == JOptionPane.YES_OPTION) {
+                    turn = true;
+                    board.cleanBoard();
+                }
+                else {
+                    System.exit(0);
+                }
+            }
+            else if (board.getWinner() == Player.O) {
+                int reply = JOptionPane.showConfirmDialog(null, "You Lost... Play Again?", "Play Again?", JOptionPane.YES_NO_OPTION);
+                if (reply == JOptionPane.YES_OPTION) {
+                    turn = true;
+                    board.cleanBoard();
+                }
+                else {
+                    System.exit(0);
+                }
+            }
+            else if (board.checkSpaces()) {
+                int reply = JOptionPane.showConfirmDialog(null, "Draw... Play Again?", "Play Again?", JOptionPane.YES_NO_OPTION);
+                if (reply == JOptionPane.YES_OPTION) {
+                    turn = true;
+                    board.cleanBoard();
+                }
+                else {
+                    System.exit(0);
+                }
+            }
+            else if (turn) {
+                viewer.refresh();
+            }
+            else if (!turn){
+                TimeUnit.SECONDS.sleep(1);
+                board.nextMoveAI();
+                viewer.refresh();
+                turn = true;
+            }
+
         }
     }
 
