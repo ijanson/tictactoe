@@ -15,6 +15,29 @@ public class TicTacToeBoard {
         assert player != null;
         board[x][y] = player;
     }
+    public void cleanBoard() {
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board.length; j++) {
+                board[i][j] = null;
+            }
+        }
+    }
+    public boolean checkSpaces() {
+        int nullCounter = 0;
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board.length; j++) {
+                if (board[i][j] == null) {
+                    nullCounter++;
+                }
+            }
+        }
+        if (nullCounter == 0) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
     public Player getWinner() {
         Player player = checkRow(0);
         if (player ==  null) {player = checkRow(1);}
@@ -33,83 +56,107 @@ public class TicTacToeBoard {
     public void nextMoveAI() {
         if (checkForWinningRow(0, Player.O) != -1) {
             move(Player.O, checkForWinningRow(0, Player.O), 0);
+            return;
         }
         else if (checkForWinningRow(1, Player.O) != -1) {
             move(Player.O, checkForWinningRow(1, Player.O), 1);
+            return;
         }
         else if (checkForWinningRow(2, Player.O) != -1) {
             move(Player.O, checkForWinningRow(2, Player.O), 2);
+            return;
         }
         else if (checkForWinningColumn(0, Player.O) != -1) {
             move(Player.O, 0, checkForWinningColumn(0, Player.O));
+            return;
         }
         else if (checkForWinningColumn(1, Player.O) != -1) {
             move(Player.O, 1, checkForWinningColumn(1, Player.O));
+            return;
         }
         else if (checkForWinningColumn(2, Player.O) != -1) {
             move(Player.O, 2, checkForWinningColumn(2, Player.O));
+            return;
         }
         else if (board[0][0] == board [1][1] && board[2][2] == null && board[0][0] == Player.O){
             move(Player.O, 2, 2);
+            return;
         }
         else if (board[1][1] == board [2][2] && board[0][0] == null && board[1][1] == Player.O){
             move(Player.O, 0, 0);
+            return;
         }
         else if (board[0][0] == board [2][2] && board[1][1] == null && board[0][0] == Player.O){
             move(Player.O, 1, 1);
+            return;
         }
         else if (board[0][2] == board [1][1] && board[2][0] == null && board[0][2] == Player.O){
             move(Player.O, 2, 0);
+            return;
         }
         else if (board[1][1] == board [2][0] && board[0][2] == null && board[1][1] == Player.O){
             move(Player.O, 0, 2);
+            return;
         }
         else if (board[0][2] == board [2][0] && board[1][1] == null && board[0][2] == Player.O){
             move(Player.O, 1, 1);
+            return;
         }
         else if (checkForWinningRow(0, Player.X) != -1) {
             move(Player.O, checkForWinningRow(0, Player.X), 0);
+            return;
         }
         else if (checkForWinningRow(1, Player.X) != -1) {
             move(Player.O, checkForWinningRow(1, Player.X), 1);
+            return;
         }
         else if (checkForWinningRow(2, Player.X) != -1) {
             move(Player.O, checkForWinningRow(2, Player.X), 2);
+            return;
         }
         else if (checkForWinningColumn(0, Player.X) != -1) {
             move(Player.O, 0, checkForWinningColumn(0, Player.X));
+            return;
         }
         else if (checkForWinningColumn(1, Player.X) != -1) {
             move(Player.O, 1, checkForWinningColumn(1, Player.X));
+            return;
         }
         else if (checkForWinningColumn(2, Player.X) != -1) {
             move(Player.O, 2, checkForWinningColumn(2, Player.X));
+            return;
         }
         else if (board[0][0] == board [1][1] && board[2][2] == null && board[0][0] == Player.X){
             move(Player.O, 2, 2);
+            return;
         }
         else if (board[1][1] == board [2][2] && board[0][0] == null && board[1][1] == Player.X){
             move(Player.O, 0, 0);
+            return;
         }
         else if (board[0][0] == board [2][2] && board[1][1] == null && board[0][0] == Player.X){
             move(Player.O, 1, 1);
+            return;
         }
         else if (board[0][2] == board [1][1] && board[2][0] == null && board[0][2] == Player.X){
             move(Player.O, 2, 0);
+            return;
         }
         else if (board[1][1] == board [2][0] && board[0][2] == null && board[1][1] == Player.X){
             move(Player.O, 0, 2);
+            return;
         }
         else if (board[0][2] == board [2][0] && board[1][1] == null && board[0][2] == Player.X){
             move(Player.O, 1, 1);
+            return;
         }
         else {
             while (true) {
                 int i = generateRandomSpace();
                 int j = generateRandomSpace();
-                if (board[i][j] != null) {
+                if (board[i][j] == null) {
                     move(Player.O, i, j);
-                    break;
+                    return;
                 }
             }
         }

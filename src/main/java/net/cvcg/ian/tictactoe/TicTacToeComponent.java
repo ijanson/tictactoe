@@ -15,6 +15,7 @@ public class TicTacToeComponent extends JComponent
     private TicTacToeBoard board;
     private Player[][] boardArray;
 
+
     public void setBoard(TicTacToeBoard board) {
         this.board = board;
         boardArray = board.getBoard();
@@ -68,7 +69,7 @@ public class TicTacToeComponent extends JComponent
                     if (i == 1 && j == 2) {
                         drawX(8, g2);
                     }
-                    if (i == 2 && j == 0) {
+                    if (i == 2 && j == 2) {
                         drawX(9, g2);
                     }
                 }
@@ -97,7 +98,7 @@ public class TicTacToeComponent extends JComponent
                     if (i == 1 && j == 2) {
                         drawO(8, g2);
                     }
-                    if (i == 2 && j == 0) {
+                    if (i == 2 && j == 2) {
                         drawO(9, g2);
                     }
                 }
@@ -115,7 +116,7 @@ public class TicTacToeComponent extends JComponent
             g2.draw(line1);
             g2.draw(line2);
         }
-        if (pos == 2) {
+        else if (pos == 2) {
             g2.setStroke(new BasicStroke(5));
             Line2D.Double line1 = new Line2D.Double(160, 0, 320, 160);
             Line2D.Double line2 = new Line2D.Double(320, 0, 160, 160);
@@ -123,7 +124,7 @@ public class TicTacToeComponent extends JComponent
             g2.draw(line1);
             g2.draw(line2);
         }
-        if (pos == 3) {
+        else if (pos == 3) {
             g2.setStroke(new BasicStroke(5));
             Line2D.Double line1 = new Line2D.Double(320, 0, 480, 160);
             Line2D.Double line2 = new Line2D.Double(480, 0, 320, 160);
@@ -131,7 +132,7 @@ public class TicTacToeComponent extends JComponent
             g2.draw(line1);
             g2.draw(line2);
         }
-        if (pos == 4) {
+        else if (pos == 4) {
             g2.setStroke(new BasicStroke(5));
             Line2D.Double line1 = new Line2D.Double(0, 160, 160, 320);
             Line2D.Double line2 = new Line2D.Double(160, 160, 0, 320);
@@ -139,7 +140,7 @@ public class TicTacToeComponent extends JComponent
             g2.draw(line1);
             g2.draw(line2);
         }
-        if (pos == 5) {
+        else if (pos == 5) {
             g2.setStroke(new BasicStroke(5));
             Line2D.Double line1 = new Line2D.Double(160, 160, 320, 320);
             Line2D.Double line2 = new Line2D.Double(320, 160, 160, 320);
@@ -189,49 +190,49 @@ public class TicTacToeComponent extends JComponent
             g2.setColor(Color.BLACK);
             g2.draw(circle);
         }
-        if (pos == 2) {
+        else if (pos == 2) {
             g2.setStroke(new BasicStroke(5));
             Ellipse2D.Double circle = new Ellipse2D.Double(160, 0, 160, 160);
             g2.setColor(Color.BLACK);
             g2.draw(circle);
         }
-        if (pos == 3) {
+        else if (pos == 3) {
             g2.setStroke(new BasicStroke(5));
             Ellipse2D.Double circle = new Ellipse2D.Double(320, 0, 160, 160);
             g2.setColor(Color.BLACK);
             g2.draw(circle);
         }
-        if (pos == 4) {
+        else if (pos == 4) {
             g2.setStroke(new BasicStroke(5));
             Ellipse2D.Double circle = new Ellipse2D.Double(0, 160, 160, 160);
             g2.setColor(Color.BLACK);
             g2.draw(circle);
         }
-        if (pos == 5) {
+        else if (pos == 5) {
             g2.setStroke(new BasicStroke(5));
             Ellipse2D.Double circle = new Ellipse2D.Double(160, 160, 160, 160);
             g2.setColor(Color.BLACK);
             g2.draw(circle);
         }
-        if (pos == 6) {
+        else if (pos == 6) {
             g2.setStroke(new BasicStroke(5));
             Ellipse2D.Double circle = new Ellipse2D.Double(320, 160, 160, 160);
             g2.setColor(Color.BLACK);
             g2.draw(circle);
         }
-        if (pos == 7) {
+        else if (pos == 7) {
             g2.setStroke(new BasicStroke(5));
             Ellipse2D.Double circle = new Ellipse2D.Double(0, 320, 160, 160);
             g2.setColor(Color.BLACK);
             g2.draw(circle);
         }
-        if (pos == 8) {
+        else if (pos == 8) {
             g2.setStroke(new BasicStroke(5));
             Ellipse2D.Double circle = new Ellipse2D.Double(160, 320, 160, 160);
             g2.setColor(Color.BLACK);
             g2.draw(circle);
         }
-        if (pos == 9) {
+        else if (pos == 9) {
             g2.setStroke(new BasicStroke(5));
             Ellipse2D.Double circle = new Ellipse2D.Double(320, 320, 160, 160);
             g2.setColor(Color.BLACK);
