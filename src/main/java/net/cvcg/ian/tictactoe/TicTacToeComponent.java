@@ -8,7 +8,7 @@ import java.awt.Graphics2D;
 import java.awt.Color;
 import java.awt.geom.Line2D;
 import java.awt.geom.Ellipse2D;
-import javax.swing.JComponent;
+import javax.swing.*;
 import java.awt.BasicStroke;
 public class TicTacToeComponent extends JComponent
 {
@@ -105,7 +105,6 @@ public class TicTacToeComponent extends JComponent
             }
         }
     }
-
     private void drawX(int pos, Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
         if (pos == 1) {
