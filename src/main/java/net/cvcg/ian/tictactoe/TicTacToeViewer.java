@@ -13,6 +13,7 @@ public class TicTacToeViewer
     private JFrame frame;
     private TicTacToeBoard board;
     private Player[][] boardArray;
+    private TicTacToeComponent component;
     class MousePressListener implements MouseListener {
         public void mousePressed(MouseEvent event) {
             int x = event.getX();
@@ -62,6 +63,7 @@ public class TicTacToeViewer
     }
     public TicTacToeViewer(TicTacToeBoard board) {
         this.board = board;
+        component = new TicTacToeComponent();
         boardArray = board.getBoard();
         frame = new JFrame();
 
@@ -69,16 +71,20 @@ public class TicTacToeViewer
         frame.setTitle("Tic Tac Toe");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
+        frame.add(component);
+        component.setBoard(board);
         MouseListener listener = new MousePressListener();
         frame.addMouseListener(listener);
     }
 
     public void refresh() {
 
-        TicTacToeComponent component1 = new TicTacToeComponent();
-        component1.repaint();
-        component1.setBoard(board);
-        frame.add(component1);
-        frame.repaint();
+        //TicTacToeComponent component1 = new TicTacToeComponent();
+        //component1.setBoard(board);
+        component.revalidate();
+        component.repaint();
+        //component1.setBoard(board);
+        //frame.add(component1);
+        //frame.repaint();
     }
 }

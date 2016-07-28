@@ -1,6 +1,5 @@
 package net.cvcg.ian.tictactoe;
 import javax.swing.*;
-import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 /*
@@ -10,10 +9,8 @@ public class TicTacToe {
     public static boolean turn = true;
 
     public static void main(String[] args) throws InterruptedException {
-        Scanner kBoard = new Scanner(System.in);
         TicTacToeBoard board = new TicTacToeBoard();
         TicTacToeViewer viewer = new TicTacToeViewer(board);
-        viewer.refresh();
         while (true) {
 
             if (board.getWinner() == Player.X) {
