@@ -12,6 +12,7 @@ public class TicTacToe {
         TicTacToeBoard board = new TicTacToeBoard();
         TicTacToeViewer viewer = new TicTacToeViewer(board);
         while (true) {
+            viewer.refresh();
 
             if (board.getWinner() == Player.X) {
                 int reply = JOptionPane.showConfirmDialog(null, "You Won! Play Again?", "Play Again?", JOptionPane.YES_NO_OPTION);
@@ -43,9 +44,7 @@ public class TicTacToe {
                     System.exit(0);
                 }
             }
-            else if (turn) {
-                viewer.refresh();
-            }
+
             else if (!turn){
                 TimeUnit.SECONDS.sleep(1);
                 board.nextMoveAI();
